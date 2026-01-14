@@ -5,10 +5,16 @@
     ...
   }: {
     home.packages = with pkgs; [
-      dust # disk usage visualiser.
-      statix # Nix static analyser.
+      # Nix
+      alejandra # Nix formatter
       tokei # code line counter.
-      alejandra
+      statix # Nix static analyser.
+
+      # cli
+      dust # disk usage visualiser.
+      fd
+      lazygit
+      zoxide
     ];
   };
 }
