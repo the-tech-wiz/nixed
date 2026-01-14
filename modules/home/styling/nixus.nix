@@ -11,12 +11,15 @@
     # here because styling needs desktop to style
     options.nixus.desktop.enable = lib.mkEnableOption "guh";
 
+    # overrides to taste
     config = {
       # here too
       nixus.desktop.enable = true;
       nixus.styling = {
         enable = true;
         cursors.name = "Bibata-Modern-Ice";
+
+        colors.catppuccin.accent = "sapphire";
       };
     };
   };
