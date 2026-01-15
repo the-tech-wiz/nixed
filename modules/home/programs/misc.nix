@@ -16,6 +16,9 @@
       lazygit
       zoxide
       tldr
+
+      # FIXME no module?
+      libreoffice-qt
     ];
   };
 }
