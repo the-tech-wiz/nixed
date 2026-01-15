@@ -17,6 +17,8 @@
       zoxide
       tldr
 
+      typst
+
       # desktop
       # no modules? 🤨
       libreoffice-qt
