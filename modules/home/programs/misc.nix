@@ -17,8 +17,13 @@
       zoxide
       tldr
 
-      # FIXME no module?
+      # desktop
+      # no modules? 🤨
       libreoffice-qt
+      godot
+      inkscape
+      krita
+      libresprite
     ];
   };
 }
