@@ -16,6 +16,9 @@
       lazygit
       zoxide
       tldr
+      bat
+      erdtree
+      pfetch-rs
 
       typst
 
