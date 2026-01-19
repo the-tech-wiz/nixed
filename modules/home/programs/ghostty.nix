@@ -1,5 +1,8 @@
 {
   flake.modules.homeManager.techwiz = {
-    programs.ghostty.enable = true;
+    programs.ghostty = {
+      enable = true;
+      settings.confirm-close-surface = false;
+    };
   };
 }
