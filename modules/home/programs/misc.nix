@@ -14,7 +14,6 @@
       dust # disk usage visualiser.
       fd
       lazygit
-      zoxide
       tldr
       bat
       erdtree
