@@ -20,6 +20,7 @@
         cursors.name = "Bibata-Modern-Ice";
 
         colors.catppuccin.accent = "sapphire";
+        fonts.sizes.terminal = 14;
       };
     };
   };
