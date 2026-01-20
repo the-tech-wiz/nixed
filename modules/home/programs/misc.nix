@@ -28,9 +28,6 @@
       inkscape
       krita
       libresprite
-
-      # network course
-      wireshark
     ];
   };
 }
