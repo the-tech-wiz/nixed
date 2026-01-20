@@ -31,7 +31,6 @@
 
       # network course
       wireshark
-      iperf2
     ];
   };
 }
