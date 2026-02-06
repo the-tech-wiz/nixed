@@ -28,6 +28,7 @@
       inkscape
       krita
       libresprite
+      octaveFull
     ];
   };
 }
