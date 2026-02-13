@@ -24,11 +24,14 @@
       # desktop
       # no modules? 🤨
       libreoffice-qt
-      godot
+      scilab-bin
+
       inkscape
       krita
       libresprite
-      scilab-bin
+      godot
+
+      goofcord
     ];
   };
 }
