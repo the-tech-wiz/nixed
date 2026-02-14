@@ -5,10 +5,10 @@
       settings = {
         confirm-close-surface = false;
         window-decoration = "server";
-        window-height = 10000;
-        window-width = 10000;
-        window-position-x = 0;
-        window-position-y = 0;
+        maximize=true;
+        window-padding-x = 0;
+        window-padding-y = 0;
+        window-padding-balance = true;
       };
     };
   };
