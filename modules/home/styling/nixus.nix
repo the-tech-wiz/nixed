@@ -4,6 +4,7 @@
   ...
 }: {
   flake.modules.homeManager.styling = {
+    # TODO: detach this dep and recreate what needed for myself
     imports = [
       inputs.nixus.modules.homeManager.styling
     ];

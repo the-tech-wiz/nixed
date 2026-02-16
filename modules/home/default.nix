@@ -11,7 +11,7 @@
     modules = [
       self.modules.homeManager.styling
       self.modules.homeManager.techwiz
-
+      self.modules.homeManager.generic
       {
         home = {
           username = "techwiz";
