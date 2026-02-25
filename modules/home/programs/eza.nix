@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.techwiz = {config, ...}: {
+  flake.modules.homeManager.programs = {config, ...}: {
     # `ls` clone with extra features.
     programs.eza = {
       enable = true;

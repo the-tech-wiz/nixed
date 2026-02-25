@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.techwiz = {config, ...}: {
+  flake.modules.homeManager.programs = {config, ...}: {
     # faster `grep` clone.
     programs.ripgrep.enable = true;
 

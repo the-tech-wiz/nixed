@@ -10,7 +10,7 @@
 
     modules = [
       self.modules.homeManager.styling
-      self.modules.homeManager.techwiz
+      self.modules.homeManager.programs
       self.modules.homeManager.generic
       {
         home = {

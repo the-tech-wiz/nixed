@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.techwiz = {config, ...}:
+  flake.modules.homeManager.programs = {config, ...}:
   # automatic development environments.
   {
     programs.direnv = {

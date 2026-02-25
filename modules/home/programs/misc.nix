@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.techwiz = {
+  flake.modules.homeManager.programs = {
     config,
     pkgs,
     ...

@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.techwiz = {config, ...}: {
+  flake.modules.homeManager.programs = {config, ...}: {
     # modern shell prompt.
     programs.zellij = {
       enable = true;
