@@ -28,7 +28,9 @@
       inkscape
       krita
       libresprite
+
       scilab-bin
+      octaveFull
     ];
   };
 }
