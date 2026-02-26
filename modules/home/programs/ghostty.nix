@@ -9,7 +9,7 @@
         window-padding-x = 0;
         window-padding-y = 0;
         window-padding-balance = true;
-
+        gtk-single-instance = true;
       };
     };
   };
