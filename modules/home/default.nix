@@ -12,7 +12,6 @@
       self.modules.homeManager.styling
       self.modules.homeManager.programs
       self.modules.homeManager.generic
-      self.modules.homeManager.compat
       {
         home = {
           username = "techwiz";
