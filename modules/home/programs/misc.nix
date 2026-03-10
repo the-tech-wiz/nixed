@@ -21,19 +21,16 @@
 
       typst
 
-      ## desktop
+      # desktop
       # no modules? 🤨
-      # creative
       libreoffice-qt
       godot
       inkscape
       krita
       libresprite
-      # math
+
       scilab-bin
       octaveFull
-      # other
-      gnome-boxes
     ];
   };
 }
