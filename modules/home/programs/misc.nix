@@ -31,6 +31,8 @@
 
       scilab-bin
       octaveFull
+
+      age
     ];
   };
 }
