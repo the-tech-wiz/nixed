@@ -29,7 +29,7 @@
       krita
       libresprite
 
-      scilab-bin
+      ungoogled-chromium
       octaveFull
 
       age
