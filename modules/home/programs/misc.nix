@@ -9,6 +9,7 @@
       alejandra # Nix formatter
       tokei # code line counter.
       statix # Nix static analyser.
+      nil # Nix ...?
 
       # cli
       dust # disk usage visualiser.
