@@ -17,14 +17,6 @@
 
       typst
 
-      # desktop
-      # no modules? 🤨
-      libreoffice-qt
-      godot
-      inkscape
-      krita
-      libresprite
-
       ungoogled-chromium
       octaveFull
 
