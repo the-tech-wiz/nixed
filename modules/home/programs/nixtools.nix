@@ -4,13 +4,19 @@
     pkgs,
     ...
   }: {
-      home.packages = with pkgs; [
+    home.packages = with pkgs; [
       # Nix tooling
 
       alejandra # Nix formatter
       tokei # code line counter.
       statix # Nix static analyser.
-      nil # Nix language server.
-      ];
+      nixd # Nix LSP.
+    ];
+    programs.nh = {
+      enable = true;
+
+      # enable automatic store cleanup.
+      clean.enable = true;
     };
+  };
 }
