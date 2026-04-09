@@ -11,6 +11,7 @@
       inkscape
       krita
       libresprite
+      blender
     ];
   };
 }
