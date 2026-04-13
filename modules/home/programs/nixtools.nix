@@ -8,7 +8,6 @@
       # Nix tooling
 
       alejandra # Nix formatter
-      tokei # code line counter.
       statix # Nix static analyser.
       nixd # Nix LSP.
     ];

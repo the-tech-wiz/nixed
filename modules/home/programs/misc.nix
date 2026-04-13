@@ -5,8 +5,9 @@
     ...
   }: {
     home.packages = with pkgs; [
-
       # cli
+
+      tokei # code line counter.
       dust # disk usage visualiser.
       fd
       lazygit
