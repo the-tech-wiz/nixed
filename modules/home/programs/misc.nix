@@ -22,6 +22,8 @@
       octaveFull
 
       age
+
+      arduino-cli # arduino cli. TODO: remember to shoot it with many guns later
     ];
   };
 }
