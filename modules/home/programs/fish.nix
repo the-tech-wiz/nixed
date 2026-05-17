@@ -18,6 +18,7 @@
           alias du dust
           alias tree erd
           alias rq 'dnf repoquery'
+          set EDITOR nvim
 
           # show system information.
           pfetch
