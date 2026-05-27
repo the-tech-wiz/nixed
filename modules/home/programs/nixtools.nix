@@ -10,6 +10,7 @@
       alejandra # Nix formatter
       statix # Nix static analyser.
       nixd # Nix LSP.
+      nil # backup Nix LSP (nixd growing pains)
     ];
     programs.nh = {
       enable = true;
