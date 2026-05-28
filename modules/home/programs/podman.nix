@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.programs = {config, ...}: {
+  flake.modules.homeManager.programs = _: {
     services.podman = {
       enable = true;
     };

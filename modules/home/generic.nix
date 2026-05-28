@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.generic = {
+  flake.modules.homeManager.generic = _: {
     targets.genericLinux.enable = true;
   };
 }

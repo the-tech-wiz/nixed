@@ -1,11 +1,6 @@
 {
-  flake.modules.homeManager.programs = {
-    config,
-    pkgs,
-    ...
-  }: {
+  flake.modules.homeManager.programs = _: {
     # the friendly interactive shell.
-    # TODO this in full w my config
     programs.fish = {
       enable = true;
 

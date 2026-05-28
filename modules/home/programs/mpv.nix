@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.programs = {config, ...}:
+  flake.modules.homeManager.programs = _:
   # automatic development environments.
   {
     programs.mpv = {
