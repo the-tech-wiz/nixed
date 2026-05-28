@@ -315,7 +315,8 @@
         "home-manager": "home-manager",
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs",
-        "nixus": "nixus"
+        "nixus": "nixus",
+        "zen-browser": "zen-browser_2"
       }
     },
     "xwayland-satellite-stable": {
@@ -368,6 +369,29 @@
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
         "rev": "8b2302d8c10369c9135552cc892da75cff5ddb03",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "type": "github"
+      }
+    },
+    "zen-browser_2": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779955179,
+        "narHash": "sha256-cHrbJ8pZrsFWUTJVk7AxWiEg5eiZptPQxtT0YXMIENo=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "c341e3f6516fb1286d25b99d34b111f93028ae87",
         "type": "github"
       },
       "original": {
