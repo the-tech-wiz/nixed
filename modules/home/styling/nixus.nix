@@ -23,6 +23,7 @@
         colors.catppuccin.accent = "sapphire";
         fonts.sizes.terminal = 14;
       };
+      gtk.gtk2.force = true;
     };
   };
 }

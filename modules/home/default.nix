@@ -11,6 +11,7 @@
     modules = [
       self.modules.homeManager.styling
       self.modules.homeManager.programs
+      self.modules.homeManager.services
       self.modules.homeManager.generic
       {
         home = {

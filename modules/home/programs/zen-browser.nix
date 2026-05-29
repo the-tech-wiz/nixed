@@ -13,6 +13,7 @@
 
     programs.zen-browser = {
       enable = true;
+      setAsDefaultBrowser = true;
 
       policies = {
         AutofillAddressEnabled = false;
@@ -35,22 +36,23 @@
           Fingerprinting = true;
         };
 
-        ExtensionSettings = let
-          mkExtensions = lib.mapAttrs (_: id: {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/${id}/latest.xpi";
-            installation_mode = "force_installed";
-          });
-        in
-          mkExtensions {
-            "{446900e4-71c2-419f-a6a7-df9c091e268b}" = "bitwarden-password-manager";
-            "{569456be-2850-4f7e-b669-71e55140ee0a}" = "amp2html";
-            "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = "return-youtube-dislikes";
-            "addon@darkreader.org" = "darkreader";
-            "gdpr@cavi.au.dk" = "consent-o-matic";
-            "jid1-MnnxcxisBPnSXQ@jetpack" = "privacy-badger17";
-            "sponsorBlocker@ajay.app" = "sponsorblock";
-            "uBlock0@raymondhill.net" = "ublock-origin";
-          };
+        # firefox sync does the job ty
+        # ExtensionSettings = let
+        #   mkExtensions = lib.mapAttrs (_: id: {
+        #     install_url = "https://addons.mozilla.org/firefox/downloads/latest/${id}/latest.xpi";
+        #     installation_mode = "force_installed";
+        #   });
+        # in
+        #   mkExtensions {
+        #     "{446900e4-71c2-419f-a6a7-df9c091e268b}" = "bitwarden-password-manager";
+        #     "{569456be-2850-4f7e-b669-71e55140ee0a}" = "amp2html";
+        #     "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = "return-youtube-dislikes";
+        #     "addon@darkreader.org" = "darkreader";
+        #     "gdpr@cavi.au.dk" = "consent-o-matic";
+        #     "jid1-MnnxcxisBPnSXQ@jetpack" = "privacy-badger17";
+        #     "sponsorBlocker@ajay.app" = "sponsorblock";
+        #     "uBlock0@raymondhill.net" = "ublock-origin";
+        #   };
 
         GenerativeAI = {
           Enabled = false;
@@ -99,10 +101,17 @@
           # enable compact mode.
           "zen.view.compact.enable-at-startup" = true;
           "zen.view.compact.show-sidebar-and-toolbar-on-hover" = false;
-
-          # disable the floating URL bar.
-          "zen.urlbar.behavior" = "normal";
         };
+
+        keyboardShortcuts = [
+          {
+            id = "zen-toggle-sidebar";
+            key = "s";
+            modifiers = {
+              alt = true;
+            };
+          }
+        ];
 
         search = {
           force = true;
@@ -144,11 +153,11 @@
       };
     };
 
-    # xdg.mimeApps.defaultApplications =
-    #   self.lib.genAttrsK
-    #   cfg.finalPackage.desktopItem.name
-    #   [
-    #     "application/pdf"
-    #   ];
+    xdg.mimeApps.defaultApplications =
+      self.lib.genAttrsK
+      cfg.finalPackage.desktopItem.name
+      [
+        "application/pdf"
+      ];
   };
 }
