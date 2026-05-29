@@ -96,16 +96,32 @@
       };
 
       # default profile settings.
+      # (extensions, bookmarks just use sync)
       profiles.default = {
         settings = {
-          # enable compact mode.
+          # toolbar
+          "zen.view.use-single-toolbar" = true;
+          # compact mode
           "zen.view.compact.enable-at-startup" = true;
           "zen.view.compact.show-sidebar-and-toolbar-on-hover" = false;
+          "zen.view.compact.toolbar-flash-popup" = true;
+
+          "zen.tabs.vertical.right-side" = true;
+
+          "zen.workspaces.force-container-workspace" = true;
+
+          # suggestions
+          "browser.search.suggest.enabled" = true;
+          "browser.search.suggest.enabled.private" = true;
+          "browser.urlbar.showSearchSuggestionsFirst" = true;
         };
+
+        # prevent breaking changes
+        keyboardShortcutsVersion = 19;
 
         keyboardShortcuts = [
           {
-            id = "zen-toggle-sidebar";
+            id = "zen-compact-mode-show-sidebar";
             key = "s";
             modifiers = {
               alt = true;
@@ -150,6 +166,69 @@
             };
           };
         };
+
+        # Find mod UUIDs at: https://zen-browser.app/mods
+        mods = [
+          "a6335949-4465-4b71-926c-4a52d34bc9c0" # Better Find Bar
+          "5bb07b6e-c89f-4f4a-a0ed-e483cc535594" # Custom MenuButton
+          "f7c71d9a-bce2-420f-ae44-a64bd92975ab" # Better Unloaded Tabs
+          "72f8f48d-86b9-4487-acea-eb4977b18f21" # Better CtrlTab Panel
+          "2317fd93-c3ed-4f37-b55a-304c1816819e" # Audio Indicator Enhanced
+        ];
+        # + facebook's
+        containers = {
+          Personal = {
+            color = "purple";
+            icon = "fingerprint";
+            id = 1;
+          };
+          Work = {
+            color = "blue";
+            icon = "briefcase";
+            id = 2;
+          };
+          Shopping = {
+            color = "yellow";
+            icon = "dollar";
+            id = 3;
+          };
+        };
+        # spacesForce = true; # Delete spaces not declared here
+        # spaces = {
+        #   "Gaming" = {
+        #       id =
+        #     }
+        #   "Personal" = {
+        #     id = "c6de089c-410d-4206-961d-ab11f988d40a";
+        #     position = 1000;
+        #     icon = "🏠";
+        #   };
+        #   "Work" = {
+        #     id = "cdd10fab-4fc5-494b-9041-325e5759195b";
+        #     position = 2000;
+        #     icon = "💼";
+        #     theme = {
+        #       type = "gradient";
+        #       colors = [
+        #         {
+        #           red = 100;
+        #           green = 150;
+        #           blue = 200;
+        #           algorithm = "floating";
+        #           type = "explicit-lightness";
+        #           lightness = 50;
+        #         }
+        #       ];
+        #       opacity = 0.8;
+        #       texture = 0.5;
+        #     };
+        #   };
+        #   "Shopping" = {
+        #     id = "78aabdad-8aae-4fe0-8ff0-2a0c6c4ccc24";
+        #     position = 3000;
+        #     icon = "💸";
+        #   };
+        # };
       };
     };
 
