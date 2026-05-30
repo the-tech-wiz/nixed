@@ -98,7 +98,7 @@
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "25.11"; # Did you read the comment?
 
-    nix.settings.experimental-features = ["nix-command" "flakes" "pipe-operator"];
+    nix.settings.experimental-features = ["nix-command" "flakes"];
 
     # Enable the X11 windowing system.
     # You can disable this if you're only using the Wayland session.
