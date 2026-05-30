@@ -3,17 +3,17 @@
     config,
     lib,
     pkgs,
-    modulesPath,
     ...
   }: {
-    config.nvidia.acceptLicense = true;
+    nixpkgs.config.nvidia.acceptLicense = true;
     # Enable OpenGL
-    hardware.graphics = {
-      enable = true;
-    };
+    hardware.graphics.enable = true;
 
     # Load nvidia driver for Xorg and Wayland
     services.xserver.videoDrivers = ["nvidia"];
+
+    # nvtop
+    environment.systemPackages = [pkgs.nvtopPackages.nvidia];
 
     hardware.nvidia = {
       # Modesetting is required.
@@ -35,7 +35,7 @@
       # supported GPUs is at:
       # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
       # Only available from driver 515.43.04+
-      open = false;
+      open = true;
 
       # Enable the Nvidia settings menu,
       # accessible via `nvidia-settings`.
@@ -49,18 +49,6 @@
         sync.enable = true;
         intelBusId = "PCI:01:00:0";
         nvidiaBusId = "PCI:00:02:0";
-      };
-      specialisation = {
-      };
-      on-the-go.configuration = {
-        system.nixos.tags = ["on-the-go"];
-        hardware.nvidia = {
-          prime = {
-            offload.enable = lib.mkForce true;
-            offload.enableOffloadCmd = lib.mkForce true;
-            sync.enable = lib.mkForce false;
-          };
-        };
       };
     };
   };
