@@ -4,7 +4,11 @@
   lib,
   ...
 }: {
-  flake.modules.homeManager.programs = {config, ...}: let
+  flake.modules.homeManager.programs = {
+    config,
+    pkgs,
+    ...
+  }: let
     cfg = config.programs.zen-browser;
   in {
     imports = with inputs; [
@@ -130,7 +134,7 @@
         ];
 
         search = {
-          force = true;
+          # force = true;
           default = "kagi";
 
           engines = {
@@ -151,10 +155,10 @@
             };
             duckduckgo = {
               name = "DuckDuckGo";
-              definedAliases = ["@d"];
+              definedAliases = ["d"];
               urls = [
                 {
-                  template = "noai.duckduckgo.com";
+                  template = "https://noai.duckduckgo.com/";
                   params = [
                     {
                       name = "q";
@@ -163,6 +167,78 @@
                   ];
                 }
               ];
+            };
+            home-manager = {
+              name = "Home Manager options";
+              definedAliases = ["hm"];
+              urls = [
+                {
+                  template = "https://home-manager-options.extranix.com/";
+                  params = [
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                    {
+                      name = "release";
+                      value = "master";
+                    }
+                  ];
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            };
+            nixpkgs = {
+              name = "nixpkgs";
+              definedAliases = ["pkg"];
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "channel";
+                      value = "unstable";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            };
+            noogle = {
+              name = "Noogle";
+              definedAliases = ["noo"];
+              urls = [
+                {
+                  template = "https://noogle.dev/q/";
+                  params = [
+                    {
+                      name = "term";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            };
+            mynixos = {
+              name = "My NixOS";
+              definedAliases = ["mnix"];
+              urls = [
+                {
+                  template = "https://mynixos.com/search";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             };
           };
         };
