@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosConfigurations.techwiz =
+  flake.nixosConfigurations.katana =
     inputs.nixpkgs.lib.nixosSystem
     {
       modules = [
