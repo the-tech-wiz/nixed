@@ -175,24 +175,6 @@
           "72f8f48d-86b9-4487-acea-eb4977b18f21" # Better CtrlTab Panel
           "2317fd93-c3ed-4f37-b55a-304c1816819e" # Audio Indicator Enhanced
         ];
-        # + facebook's
-        containers = {
-          Personal = {
-            color = "purple";
-            icon = "fingerprint";
-            id = 1;
-          };
-          Work = {
-            color = "blue";
-            icon = "briefcase";
-            id = 2;
-          };
-          Shopping = {
-            color = "yellow";
-            icon = "dollar";
-            id = 3;
-          };
-        };
         # spacesForce = true; # Delete spaces not declared here
         # spaces = {
         #   "Gaming" = {
