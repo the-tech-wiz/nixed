@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.techwiz = 
+  flake.modules.nixos.katana = 
     { config, lib, pkgs, modulesPath, ... }:
 
     {

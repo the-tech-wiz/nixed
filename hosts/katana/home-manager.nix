@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.modules.nixos.techwiz = {
+  flake.modules.nixos.katana = {
     imports = with inputs; [
       home-manager.nixosModules.home-manager
     ];
@@ -18,6 +18,7 @@
         imports = with self.modules.homeManager; [
           styling
           programs
+          services
         ];
 
         home = {

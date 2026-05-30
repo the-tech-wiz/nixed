@@ -3,7 +3,16 @@
   inputs,
   ...
 }: {
-  flake.modules.nixos.techwiz = {
+  flake.nixosConfigurations.techwiz =
+    inputs.nixpkgs.lib.nixosSystem
+    {
+      modules = [
+        self.modules.nixos.katana
+        self.modules.nixos.base
+      ];
+    };
+
+  flake.modules.nixos.katana = {
     config,
     pkgs,
     ...
@@ -13,7 +22,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
 
     boot.initrd.luks.devices."luks-f7afda07-35bc-402f-ab24-041c7fdc1ca4".device = "/dev/disk/by-uuid/f7afda07-35bc-402f-ab24-041c7fdc1ca4";
-    networking.hostName = "techwiz"; # Define your hostname.
+    networking.hostName = "katana"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
@@ -138,8 +147,4 @@
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
   };
-
-  flake.nixosConfigurations.techwiz =
-    inputs.nixpkgs.lib.nixosSystem
-    {modules = [self.modules.nixos.techwiz];};
 }
