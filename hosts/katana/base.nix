@@ -9,6 +9,7 @@
       modules = [
         self.modules.nixos.katana
         self.modules.nixos.base
+        self.modules.nixos.gaming
       ];
     };
 
