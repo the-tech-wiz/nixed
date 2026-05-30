@@ -21,6 +21,9 @@
         ];
 
         userSettings = {
+          # TODO: font stuff to change
+          "editor.fontFamily" = "IosevkaTerm NF";
+
           "editor.codeLens" = false;
           "editor.cursorBlinking" = "solid";
           "editor.formatOnSave" = true;
@@ -28,6 +31,9 @@
           "editor.minimap.enabled" = false;
           "editor.tabSize" = 2;
           "editor.unicodeHighlight.ambiguousCharacters" = false;
+
+          "editor.zoomLevel" = 2;
+
           "files.simpleDialog.enable" = true;
           "files.trimTrailingWhitespace" = true;
 
