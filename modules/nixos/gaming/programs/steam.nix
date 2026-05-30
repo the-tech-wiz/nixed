@@ -8,6 +8,12 @@
     config.programs.steam = {
       enable = true;
       package = pkgs.steam.override {
+        extraPkgs = pkgs':
+          with pkgs'; [
+            # nvidia prime
+            bumblebee
+            primus
+          ];
         # inherit
         #   (cfg)
         #   extraPkgs
