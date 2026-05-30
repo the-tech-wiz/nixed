@@ -76,10 +76,6 @@
     # for default shell
     programs.fish.enable = true;
 
-    programs.vscode = {
-      enable = true;
-      package = pkgs.vscodium;
-    };
     programs.neovim.enable = true;
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
