@@ -134,13 +134,13 @@
         ];
 
         search = {
-          # force = true;
+          force = true;
           default = "kagi";
 
           engines = {
             kagi = {
               name = "Kagi";
-              definedAliases = ["@kagi"];
+              definedAliases = ["kagi"];
               urls = [
                 {
                   template = "https://kagi.com/search";
@@ -158,7 +158,7 @@
               definedAliases = ["d"];
               urls = [
                 {
-                  template = "https://noai.duckduckgo.com/";
+                  template = "https://noai.duckduckgo.com";
                   params = [
                     {
                       name = "q";
