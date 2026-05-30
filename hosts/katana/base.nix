@@ -24,11 +24,6 @@
 
     boot.initrd.luks.devices."luks-f7afda07-35bc-402f-ab24-041c7fdc1ca4".device = "/dev/disk/by-uuid/f7afda07-35bc-402f-ab24-041c7fdc1ca4";
     networking.hostName = "katana"; # Define your hostname.
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-    # Configure network proxy if necessary
-    # networking.proxy.default = "http://user:password@proxy:port/";
-    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
     # Enable networking
     networking.networkmanager.enable = true;
@@ -103,7 +98,7 @@
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "25.11"; # Did you read the comment?
 
-    nix.settings.experimental-features = ["nix-command" "flakes"];
+    nix.settings.experimental-features = ["nix-command" "flakes" "pipe-operator"];
 
     # Enable the X11 windowing system.
     # You can disable this if you're only using the Wayland session.
