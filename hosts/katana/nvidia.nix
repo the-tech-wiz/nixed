@@ -13,7 +13,7 @@
     services.xserver.videoDrivers = ["nvidia"];
 
     # nvtop
-    environment.systemPackages = [pkgs.nvtopPackages.nvidia];
+    environment.systemPackages = with pkgs.nvtopPackages; [nvidia intel];
 
     hardware.nvidia = {
       # Modesetting is required.
