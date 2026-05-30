@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.services = {
+  flake.modules.nixos.base = {
     services.keyd = {
       enable = true;
       keyboards = {
