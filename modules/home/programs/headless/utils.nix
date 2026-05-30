@@ -12,17 +12,7 @@
       bat # better cat
       erdtree # better tree
       tailspin # log colorizer
-
-      pfetch-rs # terminal splash
-
       tldr # clean man
-
-      typst
-
-      ungoogled-chromium
-      octaveFull
-
-      age
     ];
   };
 }

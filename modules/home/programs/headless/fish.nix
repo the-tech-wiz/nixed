@@ -16,7 +16,7 @@
           set EDITOR nvim
 
           # show system information.
-          pfetch
+          fastfetch
         '';
     };
   };
