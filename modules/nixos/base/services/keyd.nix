@@ -27,7 +27,11 @@
           };
           extraConfig = ''
             # put here any extra-config, e.g. you can copy/paste here directly a configuration, just remove the ids part
-          '';
+            # grumble grumble the archaic keys the graphics course needs fsr
+            # kp1 = end
+            # kp3 = pagedown
+            # kp7 = home
+            # kp9 = pageup                    '';
         };
       };
     };
