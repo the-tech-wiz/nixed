@@ -1,5 +1,8 @@
 {
   flake.modules.homeManager.programs = {pkgs, ...}: {
-    home.packages = with pkgs; [fastfetch];
+    home.packages = [pkgs.pfetch-rs];
+    home.sessionVariables = {
+      PF_CUSTOM_LOGOS = "/home/techwiz/.config/pfetch-rs/pfetch-logo";
+    };
   };
 }
