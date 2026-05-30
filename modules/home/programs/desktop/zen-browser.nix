@@ -109,7 +109,7 @@
           "zen.tabs.vertical.right-side" = true;
 
           "zen.workspaces.force-container-workspace" = true;
-
+          "zen.workspaces.separate-essentials" = false;
           # suggestions
           "browser.search.suggest.enabled" = true;
           "browser.search.suggest.enabled.private" = true;
