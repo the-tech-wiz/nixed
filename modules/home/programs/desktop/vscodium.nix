@@ -17,7 +17,8 @@
           tamasfe.even-better-toml
           usernamehw.errorlens
           vadimcn.vscode-lldb
-          vscodevim.vim
+          # vscodevim.vim
+          asvetliakov.vscode-neovim
         ];
 
         userSettings = {
@@ -60,39 +61,42 @@
           "nix.serverSettings" = {
             nixd.formatting.command = ["alejandra"];
           };
-
-          "vim.normalModeKeyBindingsNonRecursive" = [
-            # move between diagnostics.
-            {
-              before = ["[" "d"];
-              commands = ["editor.action.marker.prevInFiles"];
-              silent = true;
-            }
-            {
-              before = ["]" "d"];
-              commands = ["editor.action.marker.nextInFiles"];
-              silent = true;
-            }
-
-            # show LSP hover.
-            {
-              before = ["K"];
-              commands = ["editor.action.showHover"];
-              silent = true;
-            }
-          ];
-          "vim.visualModeKeyBindings" = [
-            # indent and outdent lines.
-            {
-              before = [">"];
-              commands = ["editor.action.indentLines"];
-            }
-            {
-              before = ["<"];
-              commands = ["editor.action.outdentLines"];
-            }
-          ];
-          "vim.useSystemClipboard" = true;
+          "extensions.experimental.affinity" = {
+            "asvetliakov.vscode-neovim" = 1;
+          };
+          #
+          # "vim.normalModeKeyBindingsNonRecursive" = [
+          #   # move between diagnostics.
+          #   {
+          #     before = ["[" "d"];
+          #     commands = ["editor.action.marker.prevInFiles"];
+          #     silent = true;
+          #   }
+          #   {
+          #     before = ["]" "d"];
+          #     commands = ["editor.action.marker.nextInFiles"];
+          #     silent = true;
+          #   }
+          #
+          #   # show LSP hover.
+          #   {
+          #     before = ["K"];
+          #     commands = ["editor.action.showHover"];
+          #     silent = true;
+          #   }
+          # ];
+          # "vim.visualModeKeyBindings" = [
+          #   # indent and outdent lines.
+          #   {
+          #     before = [">"];
+          #     commands = ["editor.action.indentLines"];
+          #   }
+          #   {
+          #     before = ["<"];
+          #     commands = ["editor.action.outdentLines"];
+          #   }
+          # ];
+          # "vim.useSystemClipboard" = true;
         };
       };
     };
