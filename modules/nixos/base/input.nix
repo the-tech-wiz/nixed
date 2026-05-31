@@ -1,0 +1,13 @@
+{
+  flake.modules.nixos.base = {pkgs, ...}: {
+    # for vietnamese
+    i18n.inputMethod = {
+      type = "fcitx5";
+      enable = true;
+      fcitx5.addons = with pkgs; [
+        fcitx5-gtk
+        kdePackages.fcitx5-unikey
+      ];
+    };
+  };
+}
