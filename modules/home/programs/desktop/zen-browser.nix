@@ -210,7 +210,7 @@
             };
             nixos-wiki = {
               name = "NixOS Wiki";
-              definedAliases = ["nix"];
+              definedAliases = ["nixos"];
               urls = [
                 {
                   template = "https://nixos.wiki/index.php";
