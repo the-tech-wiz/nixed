@@ -208,6 +208,22 @@
               ];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             };
+            nixos-wiki = {
+              name = "NixOS Wiki";
+              definedAliases = ["nix"];
+              urls = [
+                {
+                  template = "https://nixos.wiki/index.php";
+                  params = [
+                    {
+                      name = "search";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            };
             noogle = {
               name = "Noogle";
               definedAliases = ["noo"];
