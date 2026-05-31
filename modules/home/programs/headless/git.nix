@@ -4,8 +4,18 @@
     programs.git = {
       enable = true;
       settings = {
-        user.name = "techwiz";
-        user.email = "thetechwizard@proton.me";
+        user = {
+          name = "techwiz";
+          email = "thetechwizard@proton.me";
+          signingKey = "";
+        };
+        core.autocrlf = false;
+        init.defaultBranch = "main";
+        push.autoSetupRemote = true;
+      };
+      signing = {
+        format = "ssh";
+        signByDefault = true;
       };
     };
     programs.lazygit = {
