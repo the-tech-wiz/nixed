@@ -30,7 +30,9 @@
         enable = true;
         settings = {
           git.overrideGpg = true;
-          git.pagers.useExternalDiffGitConfig = true;
+          git.pagers = [
+            {useExternalDiffGitConfig = true;}
+          ];
         };
       };
     };
