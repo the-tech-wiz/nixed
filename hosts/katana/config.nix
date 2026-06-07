@@ -10,7 +10,7 @@
         base
         katana
         gaming
-        # virtualization
+        virtualization
       ];
     };
 }
