@@ -4,6 +4,7 @@
 - complicated secret handling w/ age bs
 - restore aalto3 stuff
 - catppuccin
+- fonts
 - nvim final boss
 - quickshell detour
 - better display manager than SDDM
