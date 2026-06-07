@@ -135,30 +135,15 @@
 
         search = {
           force = true;
-          default = "kagi";
+          default = "duckduckgonoai";
 
           engines = {
-            kagi = {
-              name = "Kagi";
-              definedAliases = ["kagi"];
-              urls = [
-                {
-                  template = "https://kagi.com/search";
-                  params = [
-                    {
-                      name = "q";
-                      value = "{searchTerms}";
-                    }
-                  ];
-                }
-              ];
-            };
-            duckduckgo = {
-              name = "DuckDuckGo";
+            duckduckgonoai = {
+              name = "DuckDuckGo No AI";
               definedAliases = ["d"];
               urls = [
                 {
-                  template = "https://noai.duckduckgo.com";
+                  template = "https://noai.duckduckgo.com/";
                   params = [
                     {
                       name = "q";
