@@ -1,18 +1,4 @@
 {
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosConfigurations.katana =
-    inputs.nixpkgs.lib.nixosSystem
-    {
-      modules = [
-        self.modules.nixos.katana
-        self.modules.nixos.base
-        self.modules.nixos.gaming
-      ];
-    };
-
   flake.modules.nixos.katana = {
     config,
     pkgs,

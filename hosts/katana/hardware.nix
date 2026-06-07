@@ -6,20 +6,25 @@
     modulesPath,
     ...
   }: {
-    hardware.facter.reportPath = ./.facter.json;
-    hardware.xone.enable = true;
-
-    boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
-    boot.initrd.kernelModules = [];
-    boot.kernelModules = ["kvm-intel"];
-    boot.extraModulePackages = [];
+    hardware = {
+      facter.reportPath = ./.facter.json;
+      xpadneo.enable = true;
+      cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    };
+    boot = {
+      initrd = {
+        availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
+        kernelModules = [];
+        luks.devices."luks-a029b766-fade-4505-8cfa-43e6f3926c28".device = "/dev/disk/by-uuid/a029b766-fade-4505-8cfa-43e6f3926c28";
+      };
+      kernelModules = ["kvm-intel"];
+      extraModulePackages = [];
+    };
 
     fileSystems."/" = {
       device = "/dev/mapper/luks-a029b766-fade-4505-8cfa-43e6f3926c28";
       fsType = "ext4";
     };
-
-    boot.initrd.luks.devices."luks-a029b766-fade-4505-8cfa-43e6f3926c28".device = "/dev/disk/by-uuid/a029b766-fade-4505-8cfa-43e6f3926c28";
 
     fileSystems."/boot" = {
       device = "/dev/disk/by-uuid/1A73-ABEC";
@@ -32,6 +37,5 @@
     ];
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 }
