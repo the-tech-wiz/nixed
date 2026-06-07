@@ -1,0 +1,11 @@
+- virtualization
+- Obsidian
+- flatpak apps: Anki, Discord,etc.
+- user installed dnf apps
+- non-complicated secret handling
+- complicated secret handling w/ age bs
+- restore aalto3 stuff
+- catppuccin
+- nvim final boss
+- quickshell detour
+- better display manager than SDDM
