@@ -1,4 +1,5 @@
 {
+  # primary temp editor while setting up nvim
   flake.modules.homeManager.programs = {pkgs, ...}: {
     programs.vscode = {
       enable = true;
