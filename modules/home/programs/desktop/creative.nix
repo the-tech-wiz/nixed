@@ -1,9 +1,5 @@
 {
-  flake.modules.homeManager.programs = {
-    config,
-    pkgs,
-    ...
-  }: {
+  flake.modules.homeManager.programs = {pkgs, ...}: {
     home.packages = with pkgs; [
       # creative and media software
       libreoffice-qt
