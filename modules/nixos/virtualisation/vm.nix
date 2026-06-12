@@ -1,4 +1,4 @@
-{lib, ...}: {
+{
   flake.modules.nixos.virtualization = {
     config,
     pkgs,
