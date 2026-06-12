@@ -11,6 +11,7 @@
         katana
         gaming
         virtualization
+        audio-video
       ];
     };
 }

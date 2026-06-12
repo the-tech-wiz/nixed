@@ -15,6 +15,7 @@
         home-manager.follows = "home-manager";
       };
     };
+    musnix.url = "github:musnix/musnix";
 
     nixus.url = "git+https://codeberg.org/flippette/nixus";
     nixus.inputs = {
