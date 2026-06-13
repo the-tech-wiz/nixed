@@ -1,6 +1,6 @@
 {inputs, ...}: {
   flake.modules.nixos.audio-video = {pkgs, ...}: {
-    imports = [inputs.musnix.nixosModules.musnix]; # this line is wrong somehow, also should it even have rec?
+    imports = [inputs.musnix.nixosModules.musnix];
     environment.systemPackages = with pkgs; [
       reaper
       audacity
