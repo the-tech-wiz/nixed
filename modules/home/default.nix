@@ -17,7 +17,7 @@
         home = {
           username = "techwiz";
           homeDirectory = "/home/techwiz";
-          stateVersion = "25.11";
+          stateVersion = "26.05";
         };
       }
     ];
