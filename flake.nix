@@ -16,7 +16,7 @@
       };
     };
     musnix.url = "github:musnix/musnix";
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/";
     nixus.url = "git+https://codeberg.org/flippette/nixus";
     nixus.inputs = {
       flake-parts.follows = "flake-parts";
