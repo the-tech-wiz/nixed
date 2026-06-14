@@ -7,24 +7,34 @@
     config.programs.gamemode.enable = true;
     config.programs.steam = {
       enable = true;
-      package = pkgs.steam.override {
-        extraPkgs = pkgs':
-          with pkgs'; [
-            # nvidia prime
-            bumblebee
-            primus
-          ];
-        # inherit
-        #   (cfg)
-        #   extraPkgs
-        #   extraLibraries
-        #   extraProfile
-        #   extraPreBwrapCmds
-        #   extraBwrapArgs
-        #   extraArgs
-        #   extraEnv
-        #   ;
-      };
+      # wait do I even need this when I already have prime setup on nvidia-side
+      # package = pkgs.steam.override {
+      #     # FIXME: bandaid for bumblebee overriding outdated nvidia package for 32bit support
+      #     # https://github.com/NixOS/nixpkgs/issues/319838
+      # extraPkgs = pkgs':
+      #   with pkgs'; [
+      #     # nvidia prime
+      #     bumblebee.override
+      #     {
+      #       nvidia_x11_i686 = null;
+      #       libglvnd_i686 = null;
+      #     }
+      #     primus.override
+      #     {
+      #       primusLib_i686 = null;
+      #     }
+      #   ];
+      # inherit
+      #   (cfg)
+      #   extraPkgs
+      #   extraLibraries
+      #   extraProfile
+      #   extraPreBwrapCmds
+      #   extraBwrapArgs
+      #   extraArgs
+      #   extraEnv
+      #   ;
+      # };
 
       remotePlay.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
