@@ -7,20 +7,23 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-flatpak.url = "github:gmodena/nix-flatpak/";
 
+    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.inputs.nixpkgs.follows = "nixpkgs";
+    musnix.url = "github:musnix/musnix";
+    musnix.inputs.nixpkgs.follows = "nixpkgs";
+    # nixus.url = "git+https://codeberg.org/flippette/nixus";
+    # nixus.inputs = {
+    #   flake-parts.follows = "flake-parts";
+    #   home-manager.follows = "home-manager";
+    #   nixpkgs.follows = "nixpkgs";
+    # };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
-        # IMPORTANT: To ensure compatibility with the latest Firefox version, use nixpkgs-unstable.
+# IMPORTANT: To ensure compatibility with the latest Firefox version, use nixpkgs-unstable.
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
       };
-    };
-    musnix.url = "github:musnix/musnix";
-    nixus.url = "git+https://codeberg.org/flippette/nixus";
-    nixus.inputs = {
-      flake-parts.follows = "flake-parts";
-      home-manager.follows = "home-manager";
-      nixpkgs.follows = "nixpkgs";
     };
   };
 
