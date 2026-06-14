@@ -3,9 +3,9 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -16,7 +16,6 @@
       };
     };
     musnix.url = "github:musnix/musnix";
-    nix-flatpak.url = "github:gmodena/nix-flatpak/";
     nixus.url = "git+https://codeberg.org/flippette/nixus";
     nixus.inputs = {
       flake-parts.follows = "flake-parts";
