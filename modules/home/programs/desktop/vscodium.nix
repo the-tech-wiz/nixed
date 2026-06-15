@@ -23,9 +23,6 @@
         ];
 
         userSettings = {
-          # TODO: font stuff to change
-          "editor.fontFamily" = "IosevkaTerm NF";
-
           "editor.codeLens" = false;
           "editor.cursorBlinking" = "solid";
           "editor.formatOnSave" = true;
