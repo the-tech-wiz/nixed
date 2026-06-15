@@ -1,9 +1,9 @@
 {
   # primary temp editor while setting up nvim
   flake.modules.homeManager.programs = {pkgs, ...}: {
-    programs.vscode = {
+    programs.vscodium = {
       enable = true;
-      package = pkgs.vscodium;
+      # package = pkgs.vscodium;
 
       profiles.default = {
         extensions = with pkgs.vscode-extensions; [
