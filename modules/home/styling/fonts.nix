@@ -9,13 +9,13 @@
     defaults = {
       serif = ["Libre Baskerville"];
       sansSerif = ["Inter Variable"];
-      monospace = ["Ioskeley Mono Condensed Term"];
+      monospace = ["IosevkaTerm Nerd Font"];
       emoji = ["Twitter Color Emoji"];
     };
     defaultPackages = with pkgs; [
       libre-baskerville
       inter
-      ioskeley-mono.condensed-term
+      nerd-fonts.iosevka-term
       twitter-color-emoji
     ];
     qtctSettings.Fonts = {
@@ -39,7 +39,7 @@
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
         vista-fonts
-        nerd-fonts.symbols-only
+        # nerd-fonts.symbols-only
       ];
     in
       defaultPackages ++ extraPackages;
