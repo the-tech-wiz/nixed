@@ -5,10 +5,9 @@
     ...
   }: {
     home.packages = with pkgs; [
-      # cli
       tokei # code line counter.
-      dust # disk usage visualiser.
-      fd # better fd
+      dua # TUI disk usage manager.
+      fd # better find
       bat # better cat
       erdtree # better tree
       tailspin # log colorizer
