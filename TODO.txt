@@ -3,7 +3,6 @@
 - nvim final boss
 - quickshell detour
 - better display manager than SDDM
-- switch to lix and flip's bake of iosevka-m
 - switch to zen kernel for responsiveness
 setup secure boot (optional, kinda unnecessary)
 1. read lanzaboote book
