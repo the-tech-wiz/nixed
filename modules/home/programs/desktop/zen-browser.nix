@@ -4,12 +4,12 @@
   lib,
   ...
 }: {
-  flake.modules.homeManager.programs = {
+  flake.modules.homeManager.software = {
     config,
     pkgs,
     ...
   }: let
-    cfg = config.programs.zen-browser;
+    cfg = config.software.zen-browser;
   in {
     imports = with inputs; [
       zen-browser.homeModules.beta

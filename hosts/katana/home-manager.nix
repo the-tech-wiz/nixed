@@ -17,7 +17,7 @@
       users.techwiz = {
         imports = with self.modules.homeManager; [
           styling
-          programs
+          software
           services
         ];
 

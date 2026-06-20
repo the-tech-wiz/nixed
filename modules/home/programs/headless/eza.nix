@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.programs = _: {
+  flake.modules.homeManager.software = _: {
     # `ls` clone with extra features.
     programs.eza = {
       enable = true;

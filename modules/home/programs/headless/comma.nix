@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.homeManager.programs = {pkgs, ...}: {
+  flake.modules.homeManager.software = {pkgs, ...}: {
     imports = with inputs; [
       nix-index-database.homeModules.default
     ];

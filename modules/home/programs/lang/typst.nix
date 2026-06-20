@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.programs = {pkgs, ...}: {
+  flake.modules.homeManager.software = {pkgs, ...}: {
     home.packages = with pkgs; [
       typst
       tinymist

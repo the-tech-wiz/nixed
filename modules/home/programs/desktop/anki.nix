@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.programs = {pkgs, ...}: {
+  flake.modules.homeManager.software = {pkgs, ...}: {
     programs.anki = {
       enable = true;
       # TODO: enable some addon downloader
