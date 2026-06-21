@@ -92,6 +92,8 @@
           ];
           "vim.useSystemClipboard" = true;
         };
+
+        "lldb.suppressUpdateNotifications" = true;
       };
     };
   };
