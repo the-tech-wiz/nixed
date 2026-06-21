@@ -91,9 +91,9 @@
             }
           ];
           "vim.useSystemClipboard" = true;
+          "lldb.suppressUpdateNotifications" = true;
+          "explorer.confirmDelete" = false;
         };
-
-        "lldb.suppressUpdateNotifications" = true;
       };
     };
   };
