@@ -9,7 +9,7 @@
           # banacorn.agda-mode
           fill-labs.dependi
           jnoortheen.nix-ide
-          leanprover.lean4
+          # leanprover.lean4
           llvm-vs-code-extensions.vscode-clangd
           mkhl.direnv
           myriad-dreamin.tinymist
@@ -29,7 +29,7 @@
           "editor.minimap.enabled" = false;
           "editor.tabSize" = 2;
           "editor.unicodeHighlight.ambiguousCharacters" = false;
-          "editor.zoomLevel" = 2;
+          "window.zoomLevel" = 2;
 
           "files.autoSave" = "onFocusChange";
           "files.simpleDialog.enable" = true;
@@ -47,11 +47,11 @@
             }
           ];
 
-          # "lean4.input.languages" = [
-          #   "lean"
-          #   "lean4"
-          #   "agda"
-          # ];
+          "lean4.input.languages" = [
+            "lean"
+            "lean4"
+            "agda"
+          ];
 
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = "nixd";
