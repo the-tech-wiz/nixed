@@ -22,8 +22,9 @@
           map("n", "<C-p>", ":Telescope keymaps")
         '';
       };
+      ignoreBuildNotifications = true;
       extras = {
-        # TODO: add LSP: clangd, arduino, esp32, (potentially) basedpyright, rust clippy
+        # TODO: add LSP: arduino, esp32, (potentially) basedpyright fix, rust clippy
         lang =
           lib.genAttrs
           [
@@ -50,7 +51,6 @@
           (_: {
             enable = true;
             installDependencies = true;
-            # installRuntimeDependencies = true;
           });
       };
       extraPackages = with pkgs; [
