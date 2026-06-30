@@ -33,14 +33,13 @@
     lazyvim.url = "github:pfassina/lazyvim-nix";
   };
 
-  outputs =
-    {
-      flake-parts,
-      import-tree,
-      home-manager,
-      ...
-    }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } (import-tree [
+  outputs = {
+    flake-parts,
+    import-tree,
+    home-manager,
+    ...
+  } @ inputs:
+    flake-parts.lib.mkFlake {inherit inputs;} (import-tree [
       ./modules
       ./hosts
     ]);

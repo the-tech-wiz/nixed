@@ -2,8 +2,6 @@
   flake.modules.nixos.katana = {
     config,
     lib,
-    pkgs,
-    modulesPath,
     ...
   }: {
     hardware = {
