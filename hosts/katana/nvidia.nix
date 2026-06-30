@@ -1,7 +1,6 @@
 {
   flake.modules.nixos.katana = {
     config,
-    lib,
     pkgs,
     ...
   }: {
@@ -13,7 +12,7 @@
     services.xserver.videoDrivers = ["nvidia"];
 
     # nvtop
-    environment.systemPackages = with pkgs.nvtopPackages; [nvidia intel];
+    environment.systemPackages = [pkgs.nvtopPackages.full];
 
     hardware.nvidia = {
       # Modesetting is required.
@@ -27,7 +26,7 @@
 
       # Fine-grained power management. Turns off GPU when not in use.
       # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-      powerManagement.finegrained = false;
+      powerManagement.finegrained = true;
 
       # Use the NVidia open source kernel module (not to be confused with the
       # independent third-party "nouveau" open source driver).
@@ -46,7 +45,10 @@
 
       # laptop PRIME-specific
       prime = {
-        sync.enable = true;
+        # disabled until working in wayland
+        # sync.enable = true;
+        offload.enable = true;
+
         intelBusId = "PCI:01:00:0";
         nvidiaBusId = "PCI:00:02:0";
       };
