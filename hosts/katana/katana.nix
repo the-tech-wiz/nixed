@@ -1,14 +1,13 @@
 {
-  flake.modules.nixos.katana = {
-    config,
-    pkgs,
-    ...
-  }: {
-    # Bootloader.
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
+  flake.modules.nixos.katana = {pkgs, ...}: {
+    # Allow unfree packages
+    nixpkgs.config.allowUnfree = true;
 
-    boot.initrd.luks.devices."luks-f7afda07-35bc-402f-ab24-041c7fdc1ca4".device = "/dev/disk/by-uuid/f7afda07-35bc-402f-ab24-041c7fdc1ca4";
+    # Bootloader.
+    boot = {
+      loader.systemd-boot.enable = true;
+      loader.efi.canTouchEfiVariables = true;
+    };
     networking.hostName = "katana"; # Define your hostname.
 
     # Enable networking
@@ -32,26 +31,21 @@
       LC_TIME = "fi_FI.UTF-8";
     };
 
-    # Enable the KDE Plasma Desktop Environment.
-    services.displayManager.sddm.enable = true;
-    services.desktopManager.plasma6.enable = true;
+    services = {
+      # Enable the KDE Plasma Desktop Environment.
+      displayManager.sddm.enable = true;
+      desktopManager.plasma6.enable = true;
 
-    # Enable CUPS to print documents.
-    services.printing.enable = true;
-
-    # Enable sound with pipewire.
-    # services.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
+      printing.enable = true;
+      # bare minimum audio
+      pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        jack.enable = true;
+      };
     };
-
-    # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.techwiz = {
@@ -62,15 +56,7 @@
     };
     # for default shell
     programs.fish.enable = true;
-
     programs.neovim.enable = true;
-    # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
-
-    # List packages installed in system profile. To search, run:
-    environment.systemPackages = with pkgs; [
-      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    ];
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
@@ -81,14 +67,5 @@
     system.stateVersion = "25.11"; # Did you read the comment?
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
-
-    # Enable the X11 windowing system.
-    # You can disable this if you're only using the Wayland session.
-    # services.xserver.enable = true;
-    # Configure keymap in X11
-    # services.xserver.xkb = {
-    #   layout = "us";
-    #   variant = "";
-    # };
   };
 }
