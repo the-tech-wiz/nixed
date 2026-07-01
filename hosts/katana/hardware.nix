@@ -18,6 +18,9 @@
       };
       kernelModules = ["kvm-intel"];
       extraModulePackages = [];
+
+      loader.systemd-boot.enable = true;
+      loader.efi.canTouchEfiVariables = true;
     };
 
     fileSystems."/" = {
