@@ -1,6 +1,5 @@
 - complicated secret handling w/ agenix/sops bs
 - restore aalto3 stuff
-- nvim final boss
 - quickshell detour
 - better display manager than SDDM
 - switch to zen kernel for responsiveness
