@@ -1,10 +1,10 @@
 {
   inputs = {
-    # nix internals
+    # nix & dev internals
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
-
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -13,6 +13,9 @@
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
+    git-hooks.url = "github:cachix/git-hooks.nix";
+    git-hooks.inputs.nixpkgs.follows = "nixpkgs";
 
     # user
     catppuccin.url = "github:catppuccin/nix";
@@ -24,19 +27,17 @@
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
-        # IMPORTANT: To ensure compatibility with the latest Firefox version, use nixpkgs-unstable.
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
       };
     };
 
-    lazyvim.url = "github:pfassina/lazyvim-nix";
+    lazyvim.url = "github:pfassina/lazyvim-nix"; # uses own non-nixpkgs plugin source
   };
 
   outputs = {
     flake-parts,
     import-tree,
-    home-manager,
     ...
   } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} (import-tree [
