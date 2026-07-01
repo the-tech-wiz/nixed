@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  flake.modules.homeManager.software = {pkgs, ...}: {
+  flake.modules.homeManager.programs = {pkgs, ...}: {
     imports = [inputs.lazyvim.homeManagerModules.default];
     programs.lazyvim = {
       enable = true;

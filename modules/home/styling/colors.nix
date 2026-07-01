@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.homeManager.styling = _: {
+  flake.modules.homeManager.styling = {
     imports = [inputs.catppuccin.homeModules.catppuccin];
     catppuccin = {
       autoEnable = true;

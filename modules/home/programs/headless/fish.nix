@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.software = _: {
+  flake.modules.homeManager.programs = {
     # the friendly interactive shell.
     programs.fish = {
       enable = true;

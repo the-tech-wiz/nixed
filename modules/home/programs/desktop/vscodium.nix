@@ -1,6 +1,6 @@
 {
   # backup editor
-  flake.modules.homeManager.software = {pkgs, ...}: {
+  flake.modules.homeManager.programs = {pkgs, ...}: {
     programs.vscodium = {
       enable = true;
 

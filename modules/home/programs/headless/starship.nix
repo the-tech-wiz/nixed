@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.software = _: {
+  flake.modules.homeManager.programs = {
     # modern shell prompt.
     programs.starship = {
       enable = true;

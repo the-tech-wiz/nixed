@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.nixos.base = {pkgs, ...}: {
+  flake.modules.nixos.base = {
     imports = [inputs.nix-flatpak.nixosModules.nix-flatpak];
     services.flatpak = {
       enable = true;

@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.software = {
+  flake.modules.homeManager.programs = {
     programs.ghostty = {
       enable = true;
       settings = {

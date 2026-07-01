@@ -1,7 +1,6 @@
 {
-  flake.modules.homeManager.software = _:
-  # automatic development environments.
-  {
+  flake.modules.homeManager.programs = {
+    # automatic development environments.
     programs.direnv = {
       enable = true;
 
