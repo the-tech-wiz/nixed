@@ -1,6 +1,9 @@
 {
   flake.modules.nixos.base = {
-    # for kde connect
+    # enable networking
+    networking.networkmanager.enable = true;
+
+    # kde connect port forwarding
     networking.firewall = rec {
       allowedTCPPortRanges = [
         {
