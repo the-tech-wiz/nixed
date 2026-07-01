@@ -1,9 +1,5 @@
 {
-  flake.modules.homeManager.software = {
-    config,
-    pkgs,
-    ...
-  }: {
+  flake.modules.homeManager.software = {pkgs, ...}: {
     home.packages = with pkgs; [
       tokei # code line counter.
       dua # TUI disk usage manager.

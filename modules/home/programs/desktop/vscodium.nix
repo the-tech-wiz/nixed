@@ -1,5 +1,5 @@
 {
-  # primary temp editor while setting up nvim
+  # backup editor
   flake.modules.homeManager.software = {pkgs, ...}: {
     programs.vscodium = {
       enable = true;

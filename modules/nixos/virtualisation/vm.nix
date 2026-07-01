@@ -1,9 +1,5 @@
 {
-  flake.modules.nixos.virtualization = {
-    config,
-    pkgs,
-    ...
-  }: {
+  flake.modules.nixos.virtualization = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       quickemu
     ];

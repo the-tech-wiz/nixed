@@ -1,7 +1,5 @@
 {
-  flake.modules.homeManager.software = _:
-  # automatic development environments.
-  {
+  flake.modules.homeManager.software = _: {
     programs.mpv = {
       enable = true;
       config = {
