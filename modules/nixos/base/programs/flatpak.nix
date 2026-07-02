@@ -7,6 +7,7 @@
       packages = [
         "com.protonvpn.www"
         "org.signal.Signal"
+        "net.ankiweb.Anki"
       ];
       overrides.settings = {
         global = {
@@ -17,6 +18,9 @@
             # Force correct theme for some GTK apps
             GTK_THEME = "Adwaita:dark";
           };
+          Context = {
+            filesystems = "/home/techwiz/.icons:ro;/nix/store:ro;/home/techwiz/.local/share/fonts:ro;/run/current-system/sw/share/X11/fonts:ro;";
+          };
         };
         "org.signal.Signal".Environment = {
           # change if using different keyring
@@ -24,5 +28,7 @@
         };
       };
     };
+    # allow flatpak font access
+    fonts.fontDir.enable = true;
   };
 }
