@@ -9,6 +9,7 @@
       extraGroups = ["networkmanager" "wheel"];
       shell = pkgs.fish;
     };
+    nix.settings.trusted-users = ["root" "@wheel"];
     # for default shell
     programs.fish.enable = true;
 
