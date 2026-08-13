@@ -76,6 +76,9 @@
 
             # don't show speech synthesizer errors.
             "media.webspeech.synth.dont_notify_on_error" = true;
+
+            # disable extension signing
+            "xpinstall.signatures.required" = false;
           };
       };
 
