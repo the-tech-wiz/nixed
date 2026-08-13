@@ -1,5 +1,5 @@
 {
-  flake.nixos.modules.gaming = {pkgs, ...}: {
+  flake.modules.nixos.gaming = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [prismlauncher];
   };
 }
