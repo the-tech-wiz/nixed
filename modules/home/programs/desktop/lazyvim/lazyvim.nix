@@ -47,6 +47,7 @@
             "scala"
             "haskell"
             "python"
+            "dotnet"
           ]
           (_: {
             enable = true;
