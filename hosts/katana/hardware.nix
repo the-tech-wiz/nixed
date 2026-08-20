@@ -10,6 +10,7 @@
       cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     };
     boot = {
+      kernelParams = ["nvme_core.default_ps_max_latency_us=0"];
       initrd = {
         availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
         kernelModules = [];
