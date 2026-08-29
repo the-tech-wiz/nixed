@@ -14,6 +14,7 @@
       self.modules.homeManager.programs
       self.modules.homeManager.services
       self.modules.homeManager.generic
+      self.modules.homeManager.keys
       {
         home = {
           username = "techwiz";

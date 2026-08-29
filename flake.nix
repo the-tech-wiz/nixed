@@ -17,6 +17,18 @@
     git-hooks.url = "github:cachix/git-hooks.nix";
     git-hooks.inputs.nixpkgs.follows = "nixpkgs";
 
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs = {
+      home-manager.follows = "home-manager";
+      nixpkgs.follows = "nixpkgs";
+    };
+
+    agenix-rekey.url = "github:oddlama/agenix-rekey";
+    agenix-rekey.inputs = {
+      flake-parts.follows = "flake-parts";
+      nixpkgs.follows = "nixpkgs";
+    };
+
     # user
     catppuccin.url = "github:catppuccin/nix";
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";

@@ -1,4 +1,8 @@
-{
+{inputs, ...}: {
+  imports = with inputs; [
+    agenix-rekey.flakeModule
+  ];
+
   perSystem = {
     config,
     pkgs,
@@ -14,9 +18,16 @@
       };
     };
 
-    devShells.default = pkgs.mkShell {
+    agenix-rekey.agePackage = pkgs.age;
+    devShells.default = pkgs.mkShellNoCC {
       inputsFrom = [
         config.pre-commit.devShell
+      ];
+
+      packages = with pkgs; [
+        config.agenix-rekey.agePackage
+        config.agenix-rekey.package
+        age-plugin-yubikey
       ];
 
       shellHook = ''
