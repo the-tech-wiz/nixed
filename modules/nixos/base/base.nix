@@ -14,6 +14,8 @@
       };
     };
 
+    zramSwap.enable = true;
+
     # bare-minimum needed editor
     programs.neovim.enable = true;
   };
