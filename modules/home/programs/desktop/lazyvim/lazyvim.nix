@@ -48,6 +48,7 @@
             "haskell"
             "python"
             "dotnet"
+            "lean"
           ]
           (_: {
             enable = true;
