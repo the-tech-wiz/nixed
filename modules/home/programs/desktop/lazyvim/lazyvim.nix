@@ -34,7 +34,6 @@
             "docker"
 
             # markup
-            # NOTE: typst preview fixed soon
             "typst"
             "json"
             "markdown"
