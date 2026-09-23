@@ -10,6 +10,7 @@
         window-padding-y = 0;
         window-padding-balance = true;
         gtk-single-instance = true;
+        shell-integration-features = "sudo,ssh-terminfo,ssh-env";
       };
     };
   };
