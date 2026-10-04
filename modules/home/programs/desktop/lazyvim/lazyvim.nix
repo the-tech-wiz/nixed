@@ -19,12 +19,12 @@
           map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
           map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
           -- quick find keymaps
-          map("n", "<C-p>", ":Telescope keymaps")
+          map("n", "<C-p>", ":Telescope keymaps<CR>")
         '';
       };
       ignoreBuildNotifications = true;
       extras = {
-        # TODO: add LSP: arduino, esp32, (potentially) basedpyright fix, rust clippy
+        # TODO: add LSP: arduino, esp32, (potentially) basedpyright fix
         lang =
           lib.genAttrs
           [
@@ -53,6 +53,7 @@
             enable = true;
             installDependencies = true;
           });
+        coding = {yanky.enable = true;};
       };
       extraPackages = with pkgs; [
         # Nix
