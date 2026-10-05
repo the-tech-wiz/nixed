@@ -11,13 +11,12 @@
     age.rekey = {
       storageMode = "local";
       masterIdentities = [
-        (root + identities/yk5n-32855007.pub)
-        (root + identities/yk5n-32855004.pub)
+        (root + "/identities/yk5n-32855007.pub")
+        (root + "/identities/yk5n-32855004.pub")
       ];
 
-      hostPubkey = root + /nixos/katana/ssh_host_ed25519_key.pub;
-      localStorageDir =
-        root + /nixos/katana/rekeyed;
+      hostPubkey = root + "/nixos/katana/ssh_host_ed25519_key.pub";
+      localStorageDir = root + "/nixos/katana/rekeyed";
     };
 
     # yubikey
