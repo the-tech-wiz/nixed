@@ -1,5 +1,4 @@
 - complicated secret handling w/ agenix/sops bs
-- restore aalto3 stuff
 - quickshell detour
 - switch to zen kernel for responsiveness
 setup secure boot (optional, kinda unnecessary)
