@@ -27,6 +27,7 @@
     fileSystems."/" = {
       device = "/dev/mapper/luks-a029b766-fade-4505-8cfa-43e6f3926c28";
       fsType = "ext4";
+      options = ["noatime"];
     };
 
     fileSystems."/boot" = {
