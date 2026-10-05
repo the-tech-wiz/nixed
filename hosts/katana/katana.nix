@@ -1,5 +1,15 @@
 {
-  flake.modules.nixos.katana = {pkgs, ...}: {
+  flake.modules.nixos.katana = {
+    pkgs,
+    lib,
+    ...
+  }: let
+    useCaches = caches: {
+      substituters = map (c: c.url) caches;
+      trusted-public-keys =
+        lib.concatMap (c: c.keys) caches;
+    };
+  in {
     networking.hostName = "katana";
 
     # user account
@@ -9,7 +19,7 @@
       extraGroups = ["networkmanager" "wheel"];
       shell = pkgs.fish;
     };
-    nix.settings.trusted-users = ["root" "@wheel"];
+
     # for default shell
     programs.fish.enable = true;
 
@@ -21,6 +31,21 @@
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "25.11"; # Did you read the comment?
 
-    nix.settings.experimental-features = ["nix-command" "flakes"];
+    nix.settings =
+      {
+        trusted-users = ["root" "@wheel"];
+        experimental-features = ["nix-command" "flakes" "coerce-integers" "pipe-operator"];
+      }
+      // useCaches [
+        {
+          url = "https://nix-community.cachix.org";
+          keys = ["nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
+        }
+
+        {
+          url = "https://afnix-hydra.s3-bulk-web.afnix.fr";
+          keys = ["afnix:oqt801y+IwJ09XRtNDQYCKb7zuCw9DQXQk8fDWPkwxM="];
+        }
+      ];
   };
 }
