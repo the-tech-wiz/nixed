@@ -20,6 +20,8 @@
           map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
           -- quick find keymaps
           map("n", "<C-p>", ":Telescope keymaps<CR>")
+          -- disabling macro recording
+          map("n","q","")
         '';
       };
       ignoreBuildNotifications = true;
