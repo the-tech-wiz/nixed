@@ -1,5 +1,9 @@
 {
-  flake.modules.homeManager.styling = {pkgs, ...}: let
+  flake.modules.homeManager.styling = {
+    pkgs,
+    lib,
+    ...
+  }: let
     sizes = {
       apps = 10;
       desktop = 10;
@@ -58,17 +62,19 @@
       adjust-box-thickness = "-25%";
     };
     # vscodium
-    programs.vscodium.profiles.default.userSettings = {
-      "editor.fontFamily" = defaults.monospace;
+    programs.vscodium.profiles.default.userSettings = let
+      zoomedInSize = sizes.terminal - 2; # due to zoomLevel=3 trickery
+    in {
+      "editor.fontFamily" = lib.strings.concatStrings defaults.monospace;
       "editor.fontLigatures" = true;
-      "editor.fontSize" = sizes.terminal;
+      "editor.fontSize" = zoomedInSize;
       "terminal.integrated.fontLigatures.enabled" = true;
-      "terminal.integrated.fontSize" = sizes.terminal;
+      "terminal.integrated.fontSize" = zoomedInSize;
       "terminal.integrated.letterSpacing" = 1;
 
       # VSCodium-specific
-      "workbench.experimental.fontFamily" = defaults.sansSerif;
-      "workbench.experimental.fontSize" = sizes.desktop;
+      "workbench.experimental.fontFamily" = defaults.monospace;
+      "workbench.experimental.fontSize" = zoomedInSize - 2;
     };
     # qt-specific
     qt.qt5ctSettings = qtctSettings;

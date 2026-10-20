@@ -3,7 +3,7 @@
     home.packages = with pkgs; [
       # creative and media software
       libreoffice-qt
-      godot
+      godot-mono
       inkscape
       krita
       libresprite
