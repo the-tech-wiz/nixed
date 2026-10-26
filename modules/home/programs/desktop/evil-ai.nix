@@ -1,7 +1,7 @@
 {
   flake.modules.homeManager.programs = {
-    programs.opencode = {
-      enable = true;
-    };
+    # programs.opencode = {
+    #   enable = true;
+    # };
   };
 }
