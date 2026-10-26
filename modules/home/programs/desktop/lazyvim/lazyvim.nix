@@ -74,6 +74,9 @@
 
         # Lua
         stylua
+
+        # Markdown, Web, etc.
+        prettier
       ];
     };
   };
