@@ -48,34 +48,46 @@
     in
       defaultPackages ++ extraPackages;
 
-    # individual config
-    # ghostty
-    programs.ghostty.settings = {
-      font-family = defaults.monospace;
-      font-size = sizes.terminal;
+    # per-program config
+    programs = {
+      # ghostty
+      ghostty.settings = {
+        font-family = defaults.monospace;
+        font-size = sizes.terminal;
 
-      alpha-blending = "linear-corrected";
+        alpha-blending = "linear-corrected";
 
-      adjust-underline-thickness = "-50%";
-      adjust-strikethrough-thickness = "-50%";
-      adjust-overline-thickness = "-50%";
-      adjust-box-thickness = "-25%";
+        adjust-underline-thickness = "-50%";
+        adjust-strikethrough-thickness = "-50%";
+        adjust-overline-thickness = "-50%";
+        adjust-box-thickness = "-25%";
+      };
+
+      # vscodium
+      vscodium.profiles.default.userSettings = {
+        "editor.fontFamily" = lib.strings.concatStrings defaults.monospace;
+        "editor.fontLigatures" = true;
+        "editor.fontSize" = sizes.terminal;
+        "terminal.integrated.fontLigatures.enabled" = true;
+        "terminal.integrated.fontSize" = sizes.terminal;
+        "terminal.integrated.letterSpacing" = 1;
+
+        # VSCodium-specific
+        # "workbench.experimental.fontFamily" = defaults.monospace;
+        # "workbench.experimental.fontSize" = zoomedInSize - 2;
+      };
+
+      # its disgraced brother vscode
+      vscode.profiles.default.userSettings = {
+        "editor.fontFamily" = lib.strings.concatStrings defaults.monospace;
+        "editor.fontLigatures" = true;
+        "editor.fontSize" = sizes.terminal;
+        "terminal.integrated.fontLigatures.enabled" = true;
+        "terminal.integrated.fontSize" = sizes.terminal;
+        "terminal.integrated.letterSpacing" = 1;
+      };
     };
-    # vscodium
-    programs.vscodium.profiles.default.userSettings = let
-      zoomedInSize = sizes.terminal - 2; # due to zoomLevel=3 trickery
-    in {
-      "editor.fontFamily" = lib.strings.concatStrings defaults.monospace;
-      "editor.fontLigatures" = true;
-      "editor.fontSize" = zoomedInSize;
-      "terminal.integrated.fontLigatures.enabled" = true;
-      "terminal.integrated.fontSize" = zoomedInSize;
-      "terminal.integrated.letterSpacing" = 1;
 
-      # VSCodium-specific
-      "workbench.experimental.fontFamily" = defaults.monospace;
-      "workbench.experimental.fontSize" = zoomedInSize - 2;
-    };
     # qt-specific
     qt.qt5ctSettings = qtctSettings;
     qt.qt6ctSettings = qtctSettings;
