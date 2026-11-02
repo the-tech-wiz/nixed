@@ -22,6 +22,10 @@
 
       loader.systemd-boot.enable = true;
       loader.efi.canTouchEfiVariables = true;
+
+      zswap.enable = true;
+      zswap.maxPoolPercent = 50;
+      kernel.sysctl."vm.swappiness" = lib.mkForce 100;
     };
 
     fileSystems."/" = {
@@ -39,14 +43,7 @@
     swapDevices = [
       {device = "/dev/mapper/luks-f7afda07-35bc-402f-ab24-041c7fdc1ca4";}
     ];
-    boot.zswap = {
-      enable = true;
-      # And optionally configure further:
-      maxPoolPercent = 50;
-      shrinkerEnabled = true;
-      compressor = "zstd";
-      acceptThresholdPercent = 90;
-    };
+
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   };
 }
