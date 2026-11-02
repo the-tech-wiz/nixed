@@ -6,7 +6,6 @@
     };
 
     # autologin using 1 password for LUKS, KDE autologin and password
-    boot.initrd.systemd.enable = true;
     systemd.services.plasmalogin.serviceConfig.KeyringMode = "inherit";
     security.pam.services.plasmalogin-autologin.rules.auth = {
       systemd_loadkey = {
