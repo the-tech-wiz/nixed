@@ -105,15 +105,43 @@
 
         # prevent breaking changes
         keyboardShortcutsVersion = 21;
-        keyboardShortcuts = [
-          {
-            id = "zen-compact-mode-show-sidebar";
-            key = "s";
-            modifiers = {
-              alt = true;
-            };
-          }
-        ];
+        keyboardShortcuts =
+          [
+            {
+              id = "zen-compact-mode-show-sidebar";
+              key = "s";
+              modifiers = {
+                alt = true;
+              };
+            }
+
+            # disable ctrl+shift+L (conflicts with bitwarden autofill)
+            {
+              id = "key_inspector";
+              disabled = true;
+            }
+          ]
+          # workspace hotkeys
+          ++ map
+          (
+            i: {
+              id = "zen-workspace-switch-${toString i}";
+              key = toString i;
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+          )
+          (lib.range 1 6)
+          ++ map
+          (
+            i: {
+              id = "zen-workspace-switch-${toString i}";
+              disabled = true;
+            }
+          )
+          (lib.range 7 10);
 
         search = {
           force = true;
