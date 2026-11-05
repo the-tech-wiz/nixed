@@ -9,6 +9,7 @@
       tailspin # log colorizer
       tldr # clean man
       wget # quick file downloader
+      busybox
     ];
   };
 }
