@@ -8,6 +8,7 @@
       erdtree # better tree
       tailspin # log colorizer
       tldr # clean man
+      wget # quick file downloader
     ];
   };
 }
