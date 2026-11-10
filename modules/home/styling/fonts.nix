@@ -10,7 +10,7 @@
       popups = 10;
       terminal = 14;
     };
-    defaults = {
+    defaultFonts = {
       serif = ["Libre Baskerville"];
       sansSerif = ["Inter Variable"];
       monospace = ["IosevkaTerm Nerd Font"];
@@ -23,14 +23,14 @@
       twitter-color-emoji
     ];
     qtctSettings.Fonts = {
-      general = defaults.sans-serif;
-      fixed = defaults.monospace;
+      general = defaultFonts.sans-serif;
+      fixed = defaultFonts.monospace;
     };
   in {
     fonts.fontconfig = {
       enable = true;
 
-      defaultFonts = defaults;
+      inherit defaultFonts;
 
       hinting = "slight";
       subpixelRendering = "rgb";
@@ -49,11 +49,30 @@
       defaultPackages ++ extraPackages;
 
     # per-program config
-    programs = {
+    programs = let
+      inherit (sizes) desktop terminal;
+      inherit (defaultFonts) sansSerif monospace;
+      vscodeArgs = {
+        "editor.fontFamily" =
+          lib.concatMapStringsSep ", " (name: ''"${name}"'')
+          monospace;
+        "editor.fontLigatures" = true;
+        "editor.fontSize" = terminal + 4;
+        "terminal.integrated.fontLigatures.enabled" = true;
+        "terminal.integrated.fontSize" = terminal + 4;
+        "terminal.integrated.letterSpacing" = 1;
+
+        # VSCodium-specific
+        "workbench.experimental.fontFamily" =
+          lib.concatMapStringsSep ", " (name: ''"${name}"'')
+          sansSerif;
+        "workbench.experimental.fontSize" = desktop + 4;
+      };
+    in {
       # ghostty
       ghostty.settings = {
-        font-family = defaults.monospace;
-        font-size = sizes.terminal;
+        font-family = monospace;
+        font-size = terminal;
 
         alpha-blending = "linear-corrected";
 
@@ -64,28 +83,8 @@
       };
 
       # vscodium
-      vscodium.profiles.default.userSettings = {
-        "editor.fontFamily" = lib.strings.concatStrings defaults.monospace;
-        "editor.fontLigatures" = true;
-        "editor.fontSize" = sizes.terminal;
-        "terminal.integrated.fontLigatures.enabled" = true;
-        "terminal.integrated.fontSize" = sizes.terminal;
-        "terminal.integrated.letterSpacing" = 1;
-
-        # VSCodium-specific
-        # "workbench.experimental.fontFamily" = defaults.monospace;
-        # "workbench.experimental.fontSize" = zoomedInSize - 2;
-      };
-
-      # its disgraced brother vscode
-      vscode.profiles.default.userSettings = {
-        "editor.fontFamily" = lib.strings.concatStrings defaults.monospace;
-        "editor.fontLigatures" = true;
-        "editor.fontSize" = sizes.terminal;
-        "terminal.integrated.fontLigatures.enabled" = true;
-        "terminal.integrated.fontSize" = sizes.terminal;
-        "terminal.integrated.letterSpacing" = 1;
-      };
+      vscodium.profiles.default.userSettings = vscodeArgs; # its disgraced brother vscode
+      vscode.profiles.default.userSettings = vscodeArgs;
     };
 
     # qt-specific

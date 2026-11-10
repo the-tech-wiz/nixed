@@ -57,6 +57,7 @@
           "files.autoSave" = "onFocusChange";
           "files.simpleDialog.enable" = true;
           "files.trimTrailingWhitespace" = true;
+          "files.insertFinalNewline" = true;
 
           "errorLens.replace" = [
             {
