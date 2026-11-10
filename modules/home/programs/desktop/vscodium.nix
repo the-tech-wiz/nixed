@@ -7,35 +7,42 @@
   }: let
     args = {
       profiles.default = {
-        extensions = with pkgs.vscode-extensions; [
-          # -- GENERAL --
-          mkhl.direnv
-          jnoortheen.nix-ide
-          usernamehw.errorlens
-          # vscodevim.vim
-          asvetliakov.vscode-neovim
+        extensions = with pkgs;
+          (with vscode-extensions; [
+            # -- GENERAL --
+            mkhl.direnv
+            jnoortheen.nix-ide
+            usernamehw.errorlens
+            # vscodevim.vim
+            asvetliakov.vscode-neovim
 
-          # -- LANGUAGES --
-          # banacorn.agda-mode
-          leanprover.lean4
+            # -- LANGUAGES --
+            # banacorn.agda-mode
+            leanprover.lean4
 
-          llvm-vs-code-extensions.vscode-clangd
-          vadimcn.vscode-lldb
+            llvm-vs-code-extensions.vscode-clangd
+            vadimcn.vscode-lldb
 
-          myriad-dreamin.tinymist
+            myriad-dreamin.tinymist
 
-          rust-lang.rust-analyzer
-          fill-labs.dependi
-          tamasfe.even-better-toml
+            rust-lang.rust-analyzer
+            fill-labs.dependi
+            tamasfe.even-better-toml
 
-          # proverif.vscode-proverif
-
-          geequlim.godot-tools # For Godot GDScript support
-          woberg.godot-dotnet-tools # For Godot C# support
-          # ms-dotnettools.csdevkit
-          ms-dotnettools.csharp
-          ms-dotnettools.vscode-dotnet-runtime
-        ];
+            geequlim.godot-tools # For Godot GDScript support
+            woberg.godot-dotnet-tools # For Godot C# support
+            # ms-dotnettools.csdevkit
+            ms-dotnettools.csharp
+            ms-dotnettools.vscode-dotnet-runtime
+          ])
+          ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+            {
+              name = "vscode-proverif";
+              publisher = "ProVerif";
+              version = "1.8.17";
+              sha256 = "sha256-IGel2bVC7yqll824LGI9E1dkGK5hUDZI5EX9BsbGpxc=";
+            }
+          ];
 
         userSettings = {
           "editor.codeLens" = false;
