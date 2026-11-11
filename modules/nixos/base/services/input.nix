@@ -23,12 +23,12 @@
               capslock = "overload(control,esc)"; # you might need to also enclose the key in quotes if it contains non-alphabetical symbols
             };
 
-            control = {
+            altgr = {
               a = "ä";
               o = "ö";
               e = "€";
             };
-            "shift+control" = {
+            "shift+altgr" = {
               o = "Ö";
               a = "Ä";
               e = "€";
