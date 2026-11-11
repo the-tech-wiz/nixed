@@ -43,7 +43,8 @@
       };
     };
 
-    lazyvim.url = "github:pfassina/lazyvim-nix"; # uses own non-nixpkgs plugin source
+    # FIXME: update to latest once https://github.com/pfassina/lazyvim-nix/issues/117 fixed
+    lazyvim.url = "github:pfassina/lazyvim-nix/v16.0.1"; # uses own non-nixpkgs plugin source
   };
 
   outputs = {
