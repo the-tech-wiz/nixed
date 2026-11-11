@@ -52,12 +52,12 @@
           "editor.minimap.enabled" = false;
           "editor.tabSize" = 2;
           "editor.unicodeHighlight.ambiguousCharacters" = false;
-          "window.zoomLevel" = 2;
 
           "files.autoSave" = "onFocusChange";
           "files.simpleDialog.enable" = true;
           "files.trimTrailingWhitespace" = true;
           "files.insertFinalNewline" = true;
+          "explorer.confirmDelete" = false;
 
           "errorLens.replace" = [
             {
@@ -118,8 +118,10 @@
             }
           ];
           "vim.useSystemClipboard" = true;
+
           "lldb.suppressUpdateNotifications" = true;
-          "explorer.confirmDelete" = false;
+
+          "proverif.proverifPath" = "proverif";
 
           # --- GODOT C# ---
           "dotnetAcquisitionExtension.existingDotnetPath" = [
