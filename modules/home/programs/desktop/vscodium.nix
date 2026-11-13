@@ -119,6 +119,68 @@
           ];
           "vim.useSystemClipboard" = true;
 
+          # --- NVIM ---
+          "vscode-neovim.ctrlKeysForNormalMode" = [
+            "a"
+            "b"
+            "c"
+            "d"
+            "f"
+            "h"
+            "i"
+            "j"
+            "l"
+            "m"
+            "o"
+            "r"
+            "t"
+            "u"
+            "v"
+            "v"
+            "w"
+            "x"
+            "y"
+            "z"
+            "/"
+            "]"
+            "right"
+            "left"
+            "up"
+            "down"
+            "backspace"
+            "delete"
+          ];
+
+          "vscode-neovim." = [
+            "a"
+            "b"
+            "c"
+            "d"
+            "f"
+            "h"
+            "i"
+            "j"
+            "l"
+            "m"
+            "o"
+            "r"
+            "t"
+            "u"
+            "v"
+            "w"
+            "x"
+            "y"
+            "z"
+            "/"
+            "]"
+            "right"
+            "left"
+            "up"
+            "down"
+            "backspace"
+            "delete"
+          ];
+
           "lldb.suppressUpdateNotifications" = true;
 
           "proverif.proverifPath" = "proverif";
