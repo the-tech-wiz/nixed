@@ -31,6 +31,8 @@
       kernel.sysctl."vm.swappiness" = lib.mkForce 100;
 
       kernel.sysctl."kernel.sysrq" = 1;
+
+      resumeDevice = "/dev/mapper/luks-f7afda07-35bc-402f-ab24-041c7fdc1ca4";
     };
 
     fileSystems."/" = {
