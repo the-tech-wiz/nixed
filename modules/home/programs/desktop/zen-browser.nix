@@ -103,8 +103,6 @@
           "browser.urlbar.showSearchSuggestionsFirst" = true;
         };
 
-        # prevent breaking changes
-        keyboardShortcutsVersion = 21;
         keyboardShortcuts =
           [
             {
