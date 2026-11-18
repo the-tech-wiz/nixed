@@ -5,8 +5,179 @@
     lib,
     ...
   }: let
+    keybindings = [
+      {
+        key = "ctrl+f10";
+        command = "C_Cpp.BuildAndRunFile";
+      }
+      {
+        key = "ctrl+n";
+        command = "-workbench.action.files.newUntitledFile";
+      }
+      {
+        key = "ctrl+n";
+        command = "explorer.newFile";
+      }
+      {
+        key = "ctrl+w";
+        command = "-workbench.action.terminal.killEditor";
+        when = "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'";
+      }
+      {
+        key = "ctrl+w";
+        command = "-workbench.action.closeActiveEditor";
+      }
+      {
+        key = "ctrl+w";
+        command = "-workbench.action.closeGroup";
+        when = "activeEditorGroupEmpty && multipleEditorGroups";
+      }
+      {
+        key = "ctrl+w";
+        command = "editor.debug.action.selectionToWatch";
+      }
+      {
+        key = "ctrl+d";
+        command = "-editor.action.addSelectionToNextFindMatch";
+        when = "editorFocus";
+      }
+      {
+        key = "ctrl+d";
+        command = "explorer.newFolder";
+      }
+      {
+        key = "ctrl+m";
+        command = "-editor.action.toggleTabFocusMode";
+      }
+      {
+        key = "ctrl+shift+,";
+        command = "-workbench.action.terminal.configureSuggestSettings";
+        when = "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible";
+      }
+      {
+        key = "ctrl+shift+,";
+        command = "-editor.action.inPlaceReplace.up";
+        when = "editorTextFocus && !editorReadonly";
+      }
+      {
+        key = "ctrl+shift+,";
+        command = "workbench.action.openSettingsJson";
+      }
+      {
+        key = "ctrl+shift+alt+up";
+        command = "editor.action.insertCursorAbove";
+        when = "editorTextFocus";
+      }
+      {
+        key = "ctrl+shift+up";
+        command = "-editor.action.insertCursorAbove";
+        when = "editorTextFocus";
+      }
+      {
+        key = "ctrl+shift+alt+up";
+        command = "-editor.action.copyLinesUpAction";
+        when = "editorTextFocus && !editorReadonly";
+      }
+      {
+        key = "ctrl+shift+up";
+        command = "rust-analyzer.moveItemUp";
+      }
+      {
+        key = "ctrl+shift+alt+down";
+        command = "editor.action.insertCursorBelow";
+        when = "editorTextFocus";
+      }
+      {
+        key = "ctrl+shift+down";
+        command = "-editor.action.insertCursorBelow";
+        when = "editorTextFocus";
+      }
+      {
+        key = "ctrl+shift+alt+down";
+        command = "-editor.action.copyLinesDownAction";
+        when = "editorTextFocus && !editorReadonly";
+      }
+      {
+        key = "ctrl+shift+down";
+        command = "rust-analyzer.moveItemDown";
+      }
+      {
+        key = "ctrl+o ctrl+r";
+        command = "workbench.action.openRecent";
+      }
+      {
+        key = "ctrl+r";
+        command = "-workbench.action.openRecent";
+      }
+      {
+        key = "ctrl+shift+alt+r";
+        command = "workbench.action.reloadWindow";
+        when = "editorFocus";
+      }
+      {
+        key = "ctrl+r";
+        command = "-workbench.action.reloadWindow";
+        when = "isDevelopment";
+      }
+      {
+        key = "ctrl+shift+alt+v";
+        command = "toggleVim";
+      }
+      {
+        key = "alt+k";
+        command = "-keybindings.editor.recordSearchKeys";
+        when = "inKeybindings && inKeybindingsSearch";
+      }
+      {
+        key = "alt+k";
+        command = "-editor.action.accessibilityHelpConfigureKeybindings";
+        when = "accessibilityHelpIsShown && accessibleViewHasUnassignedKeybindings";
+      }
+      {
+        key = "alt+k";
+        command = "editor.action.moveLinesUpAction";
+        when = "editorTextFocus && !editorReadonly";
+      }
+      {
+        key = "alt+up";
+        command = "-editor.action.moveLinesUpAction";
+        when = "editorTextFocus && !editorReadonly";
+      }
+      {
+        key = "alt+j";
+        command = "editor.action.moveLinesDownAction";
+        when = "editorTextFocus && !editorReadonly";
+      }
+      {
+        key = "alt+down";
+        command = "-editor.action.moveLinesDownAction";
+        when = "editorTextFocus && !editorReadonly";
+      }
+      {
+        key = "ctrl+k ctrl+k";
+        command = "-editor.action.defineKeybinding";
+        when = "resource == 'vscode-userdata:/home/techwiz/.config/VSCodium/User/keybindings.json'";
+      }
+      {
+        key = "ctrl+k ctrl+k";
+        command = "-editor.action.selectFromAnchorToCursor";
+        when = "editorTextFocus && selectionAnchorSet";
+      }
+      {
+        key = "ctrl+k ctrl+k";
+        command = "workbench.action.navigateUp";
+        when = "!terminalFocus && neovim.mode != 'cmdline'";
+      }
+      {
+        key = "ctrl+w k";
+        command = "-workbench.action.navigateUp";
+        when = "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'";
+      }
+    ];
+
     args = {
       profiles.default = {
+        inherit keybindings;
         extensions = with pkgs;
           (with vscode-extensions; [
             # -- GENERAL --
