@@ -35,8 +35,7 @@
       {
         trusted-users = ["root" "@wheel"];
         experimental-features = ["nix-command" "flakes" "coerce-integers" "pipe-operator"];
-        builders-use-substitutes = true;
-        max-jobs = 8;
+        max-jobs = 0;
       }
       // useCaches [
         {
