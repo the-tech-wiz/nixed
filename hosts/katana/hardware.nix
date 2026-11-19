@@ -13,10 +13,18 @@
     boot = {
       kernelParams = ["nvme_core.default_ps_max_latency_us=0" "nvidia_drm.fbdev=1" "nvidia-drm.modeset=1" "ec_sys.write_support=1"];
       initrd = {
-        availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
+        availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "aesni_intel"];
         kernelModules = [];
-        luks.devices."luks-a029b766-fade-4505-8cfa-43e6f3926c28".device = "/dev/disk/by-uuid/a029b766-fade-4505-8cfa-43e6f3926c28";
-        luks.devices."luks-f7afda07-35bc-402f-ab24-041c7fdc1ca4".device = "/dev/disk/by-uuid/f7afda07-35bc-402f-ab24-041c7fdc1ca4";
+        luks.devices."luks-a029b766-fade-4505-8cfa-43e6f3926c28" = {
+          device = "/dev/disk/by-uuid/a029b766-fade-4505-8cfa-43e6f3926c28";
+          allowDiscards = true;
+          bypassWorkqueues = true;
+        };
+        luks.devices."luks-f7afda07-35bc-402f-ab24-041c7fdc1ca4" = {
+          device = "/dev/disk/by-uuid/f7afda07-35bc-402f-ab24-041c7fdc1ca4";
+          allowDiscards = true;
+          bypassWorkqueues = true;
+        };
       };
 
       kernelPackages = pkgs.linuxPackages_zen;
